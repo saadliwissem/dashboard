@@ -1,0 +1,12 @@
+@import '~minireset.css/minireset';
+@import 'C:\Users\Administrator\Desktop\dashboardd\node_modules\bootstrap\dist\css\bootstrap.min.css';
+@import 'C:\Users\Administrator\Desktop\dashboardd\node_modules\bootstrap\dist\css\bootstrap.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import "~igniteui-angular/theming";
+
+
+@include igx-core();
+@include igx-typography($font-family: $material-typeface, $type-scale: $material-type-scale);
+@include igx-theme($default-palette);

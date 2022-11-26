@@ -1,0 +1,50 @@
+<div>
+  <app-widget-area [bigcharts]="bigcharts"></app-widget-area>
+</div>
+
+<mat-divider></mat-divider>
+<br />
+
+<br />
+
+<mat-divider></mat-divider>
+
+<br />
+<h6 style="text-align: center;">الشكاوي</h6>
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+  <div fxFlex="60">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource">
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>التاريخ</th>
+          <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="weight">
+          <th mat-header-cell *matHeaderCellDef>الموضوع</th>
+          <td mat-cell *matCellDef="let element">{{ element.about }}</td>
+        </ng-container>
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        aria-label="some"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+  <div fxFlex="40">
+    <app-widget-pie [data]="datapie"></app-widget-pie>
+  </div>
+</div>

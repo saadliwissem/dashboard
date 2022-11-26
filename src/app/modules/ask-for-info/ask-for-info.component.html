@@ -1,0 +1,71 @@
+<div class="tab1">
+
+
+<h6 style="position: absolute; right: 50%; margin-top: 5">مطالب النفاذ الى المعلومة</h6>
+<p style="right:0;position: absolute; margin-right: 10px; ">
+    شخص معنوي
+</p>
+<pre>  </pre>
+<div style="margin-top: 70px" fxFlex="100">
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="data">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class="right">التسمية اجتماعية </th>
+        <td mat-cell *matCellDef="let element" class="right">{{ element.name }}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="place">
+        <th mat-header-cell *matHeaderCellDef class="right" >المقر اجتماعي</th>
+        <td mat-cell *matCellDef="let element" class="right">{{ element.place }}</td>
+      </ng-container>
+      <!-- Position Column -->
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef class="right">الهاتف</th>
+        <td mat-cell *matCellDef="let element" class="right">{{ element.phone }}</td>
+      </ng-container>
+      <ng-container matColumnDef="subject">
+        <th mat-header-cell *matHeaderCellDef class="right">الموضوع</th>
+        <td mat-cell *matCellDef="let element" class="right">{{ element.subject }}</td>
+      </ng-container>
+      <ng-container matColumnDef="info">
+        <th mat-header-cell *matHeaderCellDef class="right">المعلومة</th>
+        <td mat-cell *matCellDef="let element" class="right">{{ element.info }}</td>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+            <div style="justify-content: space-between;">
+
+            
+          <mat-icon>
+            <a style="color: rgb(219, 51, 51); text-decoration: none" href=""> delete </a>
+          </mat-icon>
+          
+          <mat-icon>
+            <a style="color: violet; text-decoration: none" href="">archive</a>
+          </mat-icon>
+        </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="colums"></tr>
+      <tr mat-row *matRowDef="let row; columns: colums"></tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+      aria-label="some"
+    >
+    </mat-paginator>
+  </div>
+</div>
+</div>
+<pre>  </pre>
+<mat-divider></mat-divider>
+<div class="tab2">
+  <app-infop></app-infop>
+</div>
+

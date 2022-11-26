@@ -1,0 +1,74 @@
+<h4 style="position: absolute; right: 0; margin-right: 100px">اضافة ملف</h4>
+<div class="mb-3" style="margin-top: 100px; margin-right: 100px">
+  <input class="form-control" type="file" id="formFileMultiple" multiple />
+</div>
+
+<button
+  style="
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 15px;
+    background-color: red;
+  "
+  type="button"
+  class="btn btn-primary btn-lg"
+>
+  اضافة الى الملفات الخاصة
+</button>
+<button
+  style="
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 15px;
+    background-color: green;
+  "
+  type="button"
+  class="btn btn-primary btn-lg"
+>
+  اضافة الى الملفات العامة
+</button>
+<button
+  type="button"
+  class="btn btn-secondary btn-lg"
+  style="
+    background-color: gray;
+    padding: 15px;
+    padding-right: 70px;
+    padding-left: 70px;
+    margin-left: 100px;
+  "
+>
+  <div style="text-align: center">الغاء</div>
+</button>
+
+<pre> </pre>
+<mat-divider></mat-divider>
+
+<div class="list">
+  <div class="item">
+    <h5>الملفات الخاصة</h5>
+
+    <mat-selection-list [multiple]="false">
+      <mat-list-option *ngFor="let shoe of privatefiles" [value]="shoe">
+        {{ shoe }}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+  <div class="item">
+    <h5>الملفات العامة</h5>
+    <mat-selection-list #shoes>
+      <mat-list-option *ngFor="let shoe of publicfiles">
+        {{ shoe }}
+      </mat-list-option>
+    </mat-selection-list>
+
+    <div>
+      <p style="margin-right: 20px">
+        <a href="">
+          <mat-icon> share </mat-icon>
+        </a>
+        {{ shoes.selectedOptions.selected.length }}
+      </p>
+    </div>
+  </div>
+</div>
